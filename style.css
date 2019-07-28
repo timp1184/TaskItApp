@@ -138,7 +138,7 @@ ul#taskList {
 	background: transparent;
 }
 
-li.taskItem {
+.added {
 	margin: 0;
 	height: 40px;
 	padding: 10px;
@@ -149,12 +149,12 @@ li.taskItem {
 
 
 
-li.taskItem:hover {
+.added:hover {
 	background: grey;
 }
 
 
-.taskItem p {
+.added p {
 	padding-top: 15px;
     font-size: 16px;
     color: white;
