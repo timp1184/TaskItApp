@@ -26,6 +26,7 @@ class UI {
 		row.classList.add("added");
 		row.innerHTML = `
 		<div class="adtask"> 
+		<input type="checkbox" class="checkbox" />
 		<p class="editTask">${t.name}</p>
 		</div>
 		<div>
@@ -34,6 +35,7 @@ class UI {
 		<div class="delete"><a href="#" 
 		class="remove btn">X</a>
 		</div>
+		<div class="sub-task"><li class="subtext">${t.name}</li></div>
 		`;
 
 		ul.appendChild(row);
@@ -60,9 +62,35 @@ class UI {
 
 	}
 
-	static subTask(){
+	static addSubTask(el){	
+		if (el.classList.contains('plus')) {
+			var taskList = el.parentElement.parentElement;
+			taskList.style.height = "400px";
 
+			var sub = taskList.lastElementChild;
+			var displaySub = sub.style.display = "block";
+
+			console.log(sub);
+
+
+
+		
+			}
+
+			
+
+
+		
 	}
+
+		
+
+
+		
+		
+	
+
+
 
 	static completeTask(){
 
@@ -75,7 +103,7 @@ document.addEventListener('DOMContentLoaded', UI.displayTask);
 
 
 //submit a task
-document.querySelector('#buttonContainer').addEventListener('click', Submit);
+document.querySelector('#taskBtn').addEventListener('click', Submit);
 function Submit(){
 
 	const input = document.querySelector('#newTask').value;
@@ -97,3 +125,16 @@ document.querySelector('#taskList')
 .addEventListener('click', (e) => {
 UI.editTask(e.target);
 });
+
+
+//add sub-task
+
+var plus = document.querySelector('#taskList')
+.addEventListener('click', (e) => {
+	UI.addSubTask(e.target);
+
+
+});
+
+
+document.getElementByClassName

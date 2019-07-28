@@ -144,18 +144,26 @@ ul#taskList {
 	grid-template-columns: 10fr 0fr 1fr;
 	margin: 0;
 	font-size: 20px;
-	height: 50px;
 	padding: 5px;
 	color: green;
 	border-bottom: solid 2px green;
+	border: red solid 1px;
 	cursor: pointer;
 
 }
 
 
 
-.added:hover {
+.addtask:hover {
 	background: grey;
+}
+
+.addtask{
+	
+}
+
+.addedExtended {
+	height: 400px;
 }
 
 
@@ -182,6 +190,16 @@ a.plus {
     width: 40px;
     height: 40px;
     display: block;
+}
+
+.sub-task {
+	display: none;
+}
+
+.sub-task li {
+    margin-left: 20%;
+    width: 50%;
+    height: 60px;
 }
 
 
