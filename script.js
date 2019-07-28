@@ -25,8 +25,8 @@ class UI {
 		const row = document.createElement('li');
 		row.classList.add("added");
 		row.innerHTML = `
-		<div class="adtask">
-		<p>${t.name}</p>
+		<div class="adtask"> 
+		<p class="editTask">${t.name}</p>
 		</div>
 		<div>
 		<a href="#" class="plus">+</a>
@@ -53,9 +53,18 @@ class UI {
 
 	static editTask(e){
 		
+		if (e.classList.contains('editTask')) {
+			e.setAttribute('contenteditable', 'true');
+		}		
 		
-		
-		
+
+	}
+
+	static subTask(){
+
+	}
+
+	static completeTask(){
 
 	}
 }

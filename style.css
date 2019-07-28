@@ -141,13 +141,14 @@ ul#taskList {
 
 .added {
 	display: grid;
-	grid-template-columns: 5fr 0fr 1fr;
+	grid-template-columns: 10fr 0fr 1fr;
 	margin: 0;
 	font-size: 20px;
 	height: 50px;
 	padding: 5px;
 	color: green;
 	border-bottom: solid 2px green;
+	cursor: pointer;
 
 }
 
@@ -159,7 +160,8 @@ ul#taskList {
 
 
 .added p {
-	padding-top: 15px;
+	padding: 18px;
+    width: 400px;
     font-size: 16px;
     color: white;
     line-height: 0;
