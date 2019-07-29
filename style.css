@@ -50,62 +50,66 @@ p {
 
 #control
 {
+   
+    width: 90%;
+    display: flex;
 	background: green;
 	margin: 0 auto;
 	padding: 25px;
-	display: grid;
-	grid-template-columns: repeat(2,1fr);
 	position: relative;
 
 }
 
-#inputContainter {
-	grid-column: 1/2;
-	padding-top: 10px;
-
-
+.ls div input[type=checkbox]{
+	margin: 10px;
 }
 
-#buttonContainer {
-	grid-column: 2/3;
-	padding-top: 10px;
-}
-
-input#newTask {
-
-    height: 40px;
-    width: 100%;
-    padding-left: 15px;
-    outline: none;
+input#inputbox {
+    flex: 5;
+    margin-right: 20px;
+    border-radius: 10px;
     border: none;
-    border-radius: 15px;
-    box-sizing: border-box;
-    background: #dddddd;
-    color: green;
+    padding: 10px;
+   }
 
+ button#priority {
+    align-self: center;
+    flex: 1;
+    margin-right: 20px;
+}
+
+button#addTask {
+    flex: 1;
+    align-self: center;
+}
+
+.ls div {
+    display: flex;
+   }
+
+
+ input.checkbox {
+    flex: 1;
+}
+
+.ls div p {
   
+    flex: 6;
+}
+
+span.gg {
+    /* align-content: flex-end; */
+    flex: 1;
+    
+}
+
+a {
+    flex: 1;
+    /* margin-left: 40px; */
 }
 
 
-button {
-   
 
-   	height: 40px;
-   	padding: 10px;
-   	border-radius: 20px;
-    outline: none;
-    border: none;
-   	cursor: pointer;
- 	text-transform: uppercase;
-    color: green;
-    font-weight: bold;
-    box-sizing: border-box;
-}
-
-button:hover {
-	background: black;
-	color: white;
-}
 
 .errormsg {
 	position: absolute;
@@ -122,13 +126,13 @@ button:hover {
 }
 
 ul#taskList {
-	margin: auto;
+	margin: 20px auto;
     width: 100%;
     height: 400px;
     overflow-y: scroll;
     text-indent: 10px;
-   box-sizing: border-box;
-   color: white;
+   	box-sizing: border-box;
+   	color: white;
 }
 
  #taskList::-webkit-scrollbar{
@@ -139,58 +143,6 @@ ul#taskList {
 	background: transparent;
 }
 
-.added {
-	display: grid;
-	grid-template-columns: 10fr 0fr 1fr;
-	margin: 0;
-	font-size: 20px;
-	padding: 5px;
-	color: green;
-	border-bottom: solid 2px green;
-	border: red solid 1px;
-	cursor: pointer;
-
-}
-
-
-
-.addtask:hover {
-	background: grey;
-}
-
-.addtask{
-	
-}
-
-.addedExtended {
-	height: 400px;
-}
-
-
-.added p {
-	padding: 18px;
-    width: 400px;
-    font-size: 16px;
-    color: white;
-    line-height: 0;
-}
-
-a.remove {
-	color: red;
-	font-weight: bold;
-	font-size: 20px;
-}
-
-a.plus {
-	color: green;
-	font-weight: bold;
-	font-size: 27px;
-	border-radius: 30%;
-    border: solid;
-    width: 40px;
-    height: 40px;
-    display: block;
-}
 
 .sub-task {
 	display: none;

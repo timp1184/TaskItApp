@@ -23,33 +23,28 @@ class UI {
 	static addTaskToList(t){
 		const ul = document.querySelector('#taskList');
 		const row = document.createElement('li');
-		row.classList.add("added");
-		row.innerHTML = `
-		<div class="adtask"> 
-		<input type="checkbox" class="checkbox" />
-		<p class="editTask">${t.name}</p>
-		</div>
-		<div>
-		<a href="#" class="plus">+</a>
-		</div>
-		<div class="delete"><a href="#" 
-		class="remove btn">X</a>
-		</div>
-		<div class="sub-task"><li class="subtext">${t.name}</li></div>
-		`;
+		row.classList.add("ls");
+		row.innerHTML =
+		 `		<div>
+        		<input type="checkbox" class="checkbox"><p class="taskitem">${t.name}</p>
+        		<span class="gg">+</span>
+				<a href="#" class="delete">X</a>
+    			</div>
+    		`;
+		
 
 		ul.appendChild(row);
 	}
 
 	static deleteTask(el){
-		if(el.classList.contains('remove')){
+		if(el.classList.contains('delete')){
 			el.parentElement.parentElement.remove();
 		}
 		
 	}
 
 	static clearTask(){
-		const input = document.querySelector('#newTask').value = '';
+		const input = document.querySelector('#inputbox').value = '';
 
 	}
 
@@ -103,10 +98,10 @@ document.addEventListener('DOMContentLoaded', UI.displayTask);
 
 
 //submit a task
-document.querySelector('#taskBtn').addEventListener('click', Submit);
+document.querySelector('#addTask').addEventListener('click', Submit);
 function Submit(){
 
-	const input = document.querySelector('#newTask').value;
+	const input = document.querySelector('#inputbox').value;
 	const t = new Task(input);
 	UI.addTaskToList(t);
 	UI.clearTask();
@@ -137,4 +132,3 @@ var plus = document.querySelector('#taskList')
 });
 
 
-document.getElementByClassName
