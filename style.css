@@ -21,6 +21,9 @@ section {
     padding-top: 20px;
    
 }
+h3#text {
+    color: green;
+}
 
 h3,  li,   p,  ul, input{
 	margin: 0;
@@ -83,6 +86,11 @@ button#addTask {
     align-self: center;
 }
 
+button#addTask:hover,  button#priority:hover {
+    background: black;
+    color: white;
+}
+
 .ls div {
     display: flex;
    }
@@ -136,11 +144,11 @@ ul#taskList {
 }
 
  #taskList::-webkit-scrollbar{
-	width: 0px;
+	width: 10px;
 
 }
  #taskList::-webkit-scrollbar-thumb {
-	background: transparent;
+	background: green;
 }
 
 
