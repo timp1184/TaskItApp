@@ -1,6 +1,8 @@
 class Task {
-	constructor(name){
+	constructor(name, id){
 		this.name = name;
+		this.id = name;
+
 		
 	}
 }
@@ -21,19 +23,28 @@ class UI {
 	}
 
 	static addTaskToList(t){
+		let id = t.id;
 		const ul = document.querySelector('#taskList');
-		const row = document.createElement('li');
+		const row = document.createElement('div');
 		row.classList.add("ls");
 		row.innerHTML =
-		 `		<div>
+		 `	<li>
         		<input type="checkbox" class="checkbox"><p class="taskitem">${t.name}</p>
         		<span class="gg">+</span>
 				<a href="#" class="delete">X</a>
-    			</div>
+
+				<div class="sbTast">
+						<input type="text" class="sbText" placeholder="subTask"/>
+    					<button>add</button>
+   						<span></span>
+   						<button>delete</button>
+   				</div>
+    		</li>
     		`;
 		
 
 		ul.appendChild(row);
+		id++;
 	}
 
 	static deleteTask(el){
