@@ -10,13 +10,7 @@ class Task {
 class UI {
 
 	static displayTask(t){
-		const task = [{
-			name: "first task"
-			
-		},{
-			name: "second task"
-		
-		}];
+		const task = Store.getTask();
 
 		const taskList = task;
 		taskList.forEach((t) => UI.addTaskToList(t));
@@ -33,7 +27,7 @@ class UI {
         		<span class="gg">+</span>
 				<a href="#" class="delete">X</a>
 
-				<div class="sbTast">
+				<div class="sbTask">
 						<input type="text" class="sbText" placeholder="subTask"/>
     					<button>add</button>
    						<span></span>
@@ -76,32 +70,38 @@ class UI {
 			var sub = taskList.lastElementChild;
 			var displaySub = sub.style.display = "block";
 
-			console.log(sub);
-
-
-
-		
+			console.log(sub);		
 			}
-
-			
-
-
-		
-	}
-
-		
-
-
-		
-		
-	
-
-
-
-	static completeTask(){
 
 	}
 }
+
+
+class Store {
+	static getTask(){
+		let tasks;
+		if(localStorage.getItem('tasks') == null){
+			tasks = [];
+		}else{
+			tasks = JSON.parse(localStorage.getItem('tasks'));
+		}
+		return tasks;
+
+	}
+
+	static addTask(task){
+		const tasks = Store.getTask();
+			tasks.push(task);
+			localStorage.setItem('tasks',JSON.stringify(tasks));
+
+	}
+
+
+	static removeTask(){
+
+	}
+}
+
 
 
 //display saved tasks
@@ -116,6 +116,7 @@ function Submit(){
 	const t = new Task(input);
 	UI.addTaskToList(t);
 	UI.clearTask();
+	Store.addTask(t);
 }
 
 
@@ -141,5 +142,7 @@ var plus = document.querySelector('#taskList')
 
 
 });
+
+
 
 
