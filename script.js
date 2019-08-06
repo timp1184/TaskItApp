@@ -1,7 +1,7 @@
 class Task {
 	constructor(name, id){
 		this.name = name;
-		this.id = name;
+		this.id = id;
 
 		
 	}
@@ -14,15 +14,17 @@ class UI {
 
 		const taskList = task;
 		taskList.forEach((t) => UI.addTaskToList(t));
+
+
 	}
 
 	static addTaskToList(t){
-		let id = t.id;
+	
 		const ul = document.querySelector('#taskList');
 		const row = document.createElement('div');
 		row.classList.add("ls");
 		row.innerHTML =
-		 `	<li>
+		 `	<li class ="list">
         		<input type="checkbox" class="checkbox"><p class="taskitem">${t.name}</p>
         		<span class="gg">+</span>
 				<a href="#" class="delete">X</a>
@@ -36,9 +38,11 @@ class UI {
     		</li>
     		`;
 		
+		var newItemList = ul.appendChild(row);
+		newItemList;
 
-		ul.appendChild(row);
-		id++;
+
+			
 	}
 
 	static deleteTask(el){
@@ -63,17 +67,14 @@ class UI {
 	}
 
 	static addSubTask(el){	
-		if (el.classList.contains('plus')) {
-			var taskList = el.parentElement.parentElement;
-			taskList.style.height = "400px";
-
-			var sub = taskList.lastElementChild;
-			var displaySub = sub.style.display = "block";
-
-			console.log(sub);		
-			}
-
+		if (el.classList.contains('gg')) {
+			var subTask = document.querySelector(".sbTask");
+			var taskItem = document.querySelector(".ls");
+		
+		}
 	}
+
+
 }
 
 
@@ -110,10 +111,21 @@ document.addEventListener('DOMContentLoaded', UI.displayTask);
 
 //submit a task
 document.querySelector('#addTask').addEventListener('click', Submit);
-function Submit(){
+function Submit(e){
+	e.preventDefault();
+
 
 	const input = document.querySelector('#inputbox').value;
-	const t = new Task(input);
+	
+
+
+		
+
+	var id = 0;
+
+	
+
+	const t = new Task(input, id);
 	UI.addTaskToList(t);
 	UI.clearTask();
 	Store.addTask(t);
@@ -134,13 +146,14 @@ UI.editTask(e.target);
 });
 
 
+//priority
+
+
 //add sub-task
 
-var plus = document.querySelector('#taskList')
+ document.querySelector('#taskList')
 .addEventListener('click', (e) => {
 	UI.addSubTask(e.target);
-
-
 });
 
 

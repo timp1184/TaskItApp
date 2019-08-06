@@ -1,0 +1,53 @@
+<html><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, intial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<style>
+		.bg { display: grid; 
+			grid-template-columns: repeat(8,1fr);  background: grey; padding: 25px; margin: auto;}
+		#totCont{margin-top: 50px;}
+		#holder{grid-column: 1/4; margin-left: 20px;}
+		#holder h3{color: white;}
+		input[type=text] { outline: none; background: none; padding: 10px; border: 2px white solid;  color: white; cursor: default;}
+		#button{margin-top: 20px; margin-bottom: 10px; border: 2px solid white; color: white; cursor: pointer; padding: 10px; background: none;}
+		#button:hover{background: darkgrey;}
+		thead{color: white;}
+		#dp{grid-column:4/8;}
+		#dp h2{color: white;}
+
+
+	</style>
+
+	<title>To Do List Project</title>
+</head>
+    
+    <body>
+    <div class="continer bg">
+	<div id="holder">
+        <h3>Weekly Revenue</h3>
+        <input type="text" id="rev">
+        <h3>Monthly Expense</h3>
+        <p>rent</p><input type="text" id="rent" />
+        <p>car note</p><input type="text" id="cnote" />
+        <p>phone bill</p><input type="text" id="pbill" />
+        <p>misc</p><input type="text" id="misc"/>
+
+
+		
+        <br><input type="submit" id="button" value="submit">
+    </div>
+       <div  id="dp">
+       	<h2>Weekly Expense</h2>
+       	<p>what you should spend each week</p>
+       </div>
+    </div>
+
+ 
+
+    
+
+
+        <script src='debt.js'></script>
+    </body></html>

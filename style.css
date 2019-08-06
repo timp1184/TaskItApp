@@ -88,7 +88,8 @@ p {
 
 .ls span.gg {
     grid-column: 10/11;
-    text-align: right;  
+    text-align: right;
+    cursor: pointer;  
 
 }
 
