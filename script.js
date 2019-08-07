@@ -38,7 +38,7 @@ class UI {
     		</li>
     		`;
 		
-		var newItemList = ul.appendChild(row);
+		var newItemList = ul.prepend(row);
 		newItemList;
 
 
