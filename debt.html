@@ -5,17 +5,30 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	
 	<style>
-		.bg { display: grid; 
-			grid-template-columns: repeat(8,1fr);  background: grey; padding: 25px; margin: auto;}
+		.bg { display: grid; grid-template-columns: repeat(8,1fr);       grid-gap: 25px;
+            width: 800px;
+            background: grey;
+            padding: 25px;
+            margin: 80px auto;}
 		#totCont{margin-top: 50px;}
-		#holder{grid-column: 1/4; margin-left: 20px;}
+		#holder{grid-column: 1/4; padding-left: 25px;
+            border: 2px solid white;}
 		#holder h3{color: white;}
-		input[type=text] { outline: none; background: none; padding: 10px; border: 2px white solid;  color: white; cursor: default;}
+		input[type=text] { outline: none; background: none; padding: 10px; border: 2px white solid;  color: white; cursor: default;  margin-bottom: 25px}
 		#button{margin-top: 20px; margin-bottom: 10px; border: 2px solid white; color: white; cursor: pointer; padding: 10px; background: none;}
 		#button:hover{background: darkgrey;}
 		thead{color: white;}
 		#dp{grid-column:4/8;}
 		#dp h2{color: white;}
+		 #holder h3 {
+                color: white;
+                text-decoration: underline;
+            }
+		#holder p {
+            color: white;
+            font-size: 20px;
+            text-transform: capitalize;
+        }
 
 
 	</style>
